@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  
+  gradle:
+    image: gradle
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
