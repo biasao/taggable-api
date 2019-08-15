@@ -7,3 +7,16 @@ services:
     volumes:
       - .:/workspace
     working_dir: /workspace
+
+  load_db:
+    image: appropriate/curl
+    restart: on-failure
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: "sh create-dbs.sh"
+
+  couchdb:
+    image: couchdb
+    ports:
+      - 5984:5984

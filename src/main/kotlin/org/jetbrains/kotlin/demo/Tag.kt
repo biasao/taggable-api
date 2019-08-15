@@ -1,3 +1,6 @@
 package org.jetbrains.kotlin.demo
 
-data class Tag(val id: Long, val url: String, val sourceHandle: String, val targetHandle: List<String>)
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Tag(val id: String, val url: String, val sourceUser: User, val targetUsers: List<User>)
